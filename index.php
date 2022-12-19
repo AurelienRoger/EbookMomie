@@ -1,15 +1,19 @@
 <?php
 
 include 'db/db.php';
+include 'supprData.php';
 
 
 $sql = "SELECT * FROM livres";
+$sqlSuppr = 'SELECT * FROM livres';
 
 
 
 //Pour debug
 //var_dump($listLivre);
 
+
+// Tri par ordre croissant soit du nom soit prenom soit titre
 if (!empty($_GET['order'])){
     if ($_GET['order'] == 'nom'){
         $sql .= ' ORDER BY auteurNom';
@@ -20,13 +24,21 @@ if (!empty($_GET['order'])){
     elseif ($_GET['order'] == 'titre'){
         $sql .= ' ORDER BY Titre';
     }
-    // TODO #1 Faire la recherche pour date aussi 
-}
+};
+
+//Suppression de livre
+
+if (!empty($_GET['delete_id'])){
+    supprData();
+};
+
+
 
 $pdoStatement = $conn->query($sql) ;
 $listLivre = $pdoStatement->fetchAll();
 
-// TODO #2 Gerer les boutons supprimer et modifier
+// TODO #2 Gerer les boutons modifier
+
 
 include 'tpl/index.tpl.php';
 ?>
