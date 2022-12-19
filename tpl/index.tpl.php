@@ -47,7 +47,6 @@
             <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col"><a href="index.php?order=id">#</a></th>
                     <th scope="col"><a href="index.php?order=prenom">Prenom</a></th>
                     <th scope="col"><a href="index.php?order=nom">Nom</a></th>
                     <th scope="col"><a href="index.php?order=titre">Titre</a></th>
@@ -58,7 +57,6 @@
                 <tbody>
                     <?php foreach ($listLivre as $value): ?>
                   <tr>
-                    <th scope="row"><?= $value['id'] ?></th>
                     <td><?= $value['auteurPrenom'] ?></td>
                     <td><?= $value['auteurNom'] ?></td>
                     <td><?= $value['Titre'] ?></td>
