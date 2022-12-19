@@ -4,8 +4,8 @@ include 'db/db.php';
 include 'supprData.php';
 
 
+//Where id_user = current_user
 $sql = "SELECT * FROM livres";
-$sqlSuppr = 'SELECT * FROM livres';
 
 
 
