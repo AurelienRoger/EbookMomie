@@ -47,11 +47,11 @@
             <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Prenom</th>
-                    <th scope="col">Nom</th>
-                    <th scope="col">Titre</th>
-                    <th scope="col">Date d'achat</th>
+                    <th scope="col"><a href="index.php?order=id">#</a></th>
+                    <th scope="col"><a href="index.php?order=prenom">Prenom</a></th>
+                    <th scope="col"><a href="index.php?order=nom">Nom</a></th>
+                    <th scope="col"><a href="index.php?order=titre">Titre</a></th>
+                    <th scope="col"><a href="index.php?order=dateAchat">Date d'achat</a></th>
                     <th scope="col">Mod / Suppr</th>
                   </tr>
                 </thead>
