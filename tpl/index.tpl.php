@@ -50,8 +50,8 @@
               <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             </div>
             <div class="d-flex justify-content-around">
-              <button type="button" class="btn btn-secondary">Modifier !</button>
-              <button type="button" class="btn btn-secondary">Annuler</button>
+              <button type="button" class="btn btn-success">Modifier !</button>
+              <button type="button" class="btn btn-danger">Annuler</button>
             </div>
           </div>
           <!-- Fin Modification de ligne pour la bdd -->
