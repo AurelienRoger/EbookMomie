@@ -38,8 +38,6 @@ if (!empty($_GET['delete_id'])){
 $pdoStatement = $conn->query($sql) ;
 $listLivre = $pdoStatement->fetchAll();
 
-// TODO #2 Gerer les boutons modifier
-
 
 include 'tpl/index.tpl.php';
 ?>
