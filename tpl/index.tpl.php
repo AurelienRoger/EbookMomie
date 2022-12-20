@@ -13,7 +13,7 @@
     
     <header class=""></header>
 
-    <main class="vh-100">
+    <main class="">
 
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
@@ -34,6 +34,27 @@
             </div>
           </nav>
 
+          <!-- Modification de ligne pour la bdd -->
+          <div class="modifier mb-3">
+            <h4 class="text-center font-weight-bold">Modification</h3>
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Prenom Auteur</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Nom Auteur</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Titre</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="d-flex justify-content-around">
+              <button type="button" class="btn btn-secondary">Modifier !</button>
+              <button type="button" class="btn btn-secondary">Annuler</button>
+            </div>
+          </div>
+          <!-- Fin Modification de ligne pour la bdd -->
           <section class="pt-3">
             <form action="" class="w-50 m-auto">
                 <div class="input-group mb-3">

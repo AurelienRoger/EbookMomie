@@ -1,4 +1,19 @@
+
 a{
     text-decoration: none;
     color: black;
+}
+
+.modifier{
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px black;
+    background-color: #F8F9FA;
+    padding: 4em;
+    position: absolute;
+    right: 0;
+    bottom: 0; 
+}
+
+.modifier-display{
+    display: none;
 }
