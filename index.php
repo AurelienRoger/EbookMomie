@@ -2,6 +2,7 @@
 
 include 'db/db.php';
 include 'supprData.php';
+include 'func.php';
 
 
 //Where id_user = current_user
