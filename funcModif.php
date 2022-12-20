@@ -21,9 +21,14 @@ function modifDonneeDb(){
         $subname = $_POST['lastname'];
         $yourtitle = $_POST['title'];
         $yourid = $_POST['idlivre'];
+
+        $namefirst = str_replace("'", "\'", $namefirst);
+        $subname = str_replace("'", "\'", $subname);
+        $yourtitle = str_replace("'", "\'", $yourtitle);
         
 
     $sqlModif = "UPDATE livres SET auteurNom='$subname' , auteurPrenom='$namefirst' , Titre='$yourtitle' WHERE id='$yourid'";
+
 //TODO #1 Gérer le fait d'avoir des apostrophes dans les chaines de caractere qui font une erreur dans la requete mysql
     $pdoModif = $conn ->exec($sqlModif);
     header('Location: index.php');
