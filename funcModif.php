@@ -24,7 +24,7 @@ function modifDonneeDb(){
         
 
     $sqlModif = "UPDATE livres SET auteurNom='$subname' , auteurPrenom='$namefirst' , Titre='$yourtitle' WHERE id='$yourid'";
-//TODO #1 Gérer le fait d'avoir des apostrophes dans les chaines de caractere qui font une erreu dans la requete mysql
+//TODO #1 Gérer le fait d'avoir des apostrophes dans les chaines de caractere qui font une erreur dans la requete mysql
     $pdoModif = $conn ->exec($sqlModif);
     header('Location: index.php');
 }
