@@ -33,6 +33,12 @@ if (!empty($_GET['delete_id'])){
     supprData();
 };
 
+//Recherche dans la table
+if(!empty($_GET['q'])){
+    $rech = $_GET['q'];
+    $sql.=" WHERE auteurNom LIKE '%$rech%' OR auteurPrenom LIKE '%$rech%' OR Titre LIKE '%$rech%'";
+}
+
 
 
 $pdoStatement = $conn->query($sql) ;
