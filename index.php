@@ -42,7 +42,7 @@ if(!empty($_GET['q'])){
 
 
 $pdoStatement = $conn->query($sql) ;
-$listLivre = $pdoStatement->fetchAll();
+$listLivre = $pdoStatement->fetchAll(PDO :: FETCH_ASSOC);
 
 
 include 'tpl/index.tpl.php';
