@@ -36,8 +36,11 @@ if(!empty($_GET['q'])){
     $sql.=" WHERE auteurNom LIKE '%$rech%' OR auteurPrenom LIKE '%$rech%' OR Titre LIKE '%$rech%'";
 }
 
-
+//instance de la classe Database, connexion maintenue avec le __construct
 $newConn = new Database();
+
+//stockage dans $listlivre les résultats obtenus avec showData ( affichage de données )
+// puis fetch all pour recup les resultats
 $listLivre = $newConn->showData()->fetchAll(PDO :: FETCH_ASSOC);
 
 require_once __DIR__ . '/../app/view/header.tpl.php';

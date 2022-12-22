@@ -5,6 +5,7 @@ class Database
     public $db;
 
     public function __construct()
+    //TODO #21 A rendre réutilisable
     {
         $servername = "localhost";
         $username = "root";
@@ -25,12 +26,16 @@ class Database
 
 
     public function showData(){
+        //TODO #20 A rendre réutilisable
+        //requete sql a effectuer
         $sql = "SELECT * FROM livres";
+        // requete sql effectuée avec db = connection et stockage dans $pdostatement
         $pdoStatement = $this->db->query($sql) ;
         
         return $pdoStatement;
     }
 
+    //TODO #1 a fix
     public function modificationDb(){
         if (!empty($_POST)){
             $namefirst = $_POST['firstname'];
