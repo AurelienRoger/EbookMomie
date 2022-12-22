@@ -1,12 +1,9 @@
 <?php
 
-require_once __DIR__ . '/../app/db/db.php';
 require_once __DIR__ . '/../app/funcModif.php';
 require_once __DIR__ . '/../app/supprData.php';
 
 
-//Where id_user = current_user
-$sql = "SELECT * FROM livres";
 
 
 
@@ -40,9 +37,8 @@ if(!empty($_GET['q'])){
 }
 
 
-
-$pdoStatement = $conn->query($sql) ;
-$listLivre = $pdoStatement->fetchAll(PDO :: FETCH_ASSOC);
+$newConn = new Database();
+$listLivre = $newConn->showData()->fetchAll(PDO :: FETCH_ASSOC);
 
 require_once __DIR__ . '/../app/view/header.tpl.php';
 require_once __DIR__ . '/../app/view/index.tpl.php';
