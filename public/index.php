@@ -44,6 +44,7 @@ if(!empty($_GET['q'])){
 $pdoStatement = $conn->query($sql) ;
 $listLivre = $pdoStatement->fetchAll(PDO :: FETCH_ASSOC);
 
-
-require_once __DIR__ . '/../app/index.tpl.php';
+require_once __DIR__ . '/../app/view/header.tpl.php';
+require_once __DIR__ . '/../app/view/index.tpl.php';
+require_once __DIR__ . '/../app/view/footer.tpl.php';
 ?>
