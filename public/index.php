@@ -1,8 +1,8 @@
 <?php
 
-include 'db/db.php';
-include 'supprData.php';
-include 'funcModif.php';
+require_once __DIR__ . '/../app/db/db.php';
+require_once __DIR__ . '/../app/funcModif.php';
+require_once __DIR__ . '/../app/supprData.php';
 
 
 //Where id_user = current_user
@@ -45,5 +45,5 @@ $pdoStatement = $conn->query($sql) ;
 $listLivre = $pdoStatement->fetchAll(PDO :: FETCH_ASSOC);
 
 
-include 'tpl/index.tpl.php';
+require_once __DIR__ . '/../app/index.tpl.php';
 ?>
