@@ -25,8 +25,7 @@
                     <td><?= $value['auteurPrenom'] ?></td>
                     <td><?= $value['auteurNom'] ?></td>
                     <td><?= $value['Titre'] ?></td>
-                    <?php $date = new DateTime($value['AnneeAchat']); ?>
-                    <td><?= $date ->format('Y')?></td>
+                    <td><?= $value['AnneeAchat']?></td>
                     <td>
                     <a href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16" data-bs-toggle="modal" data-bs-target="#exampleModal<?=$value['id']?>" id="mod-button">
