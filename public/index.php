@@ -5,7 +5,7 @@ require_once __DIR__ . '/../app/supprData.php';
 require_once __DIR__ . '/../vendor/autoload.php';
 
 
-
+$page = "";
 
 
 
@@ -45,7 +45,16 @@ $newConn = new Database();
 // puis fetch all pour recup les resultats
 $listLivre = $newConn->showData()->fetchAll(PDO :: FETCH_ASSOC);
 
+//Route
+
+if ($page === ""){
+    $pageToDisplay = "index";
+}
+else if ($page === "ajouter"){
+    $pageToDisplay = "ajouter";
+}
+
 require_once __DIR__ . '/../app/view/header.tpl.php';
-require_once __DIR__ . '/../app/view/index.tpl.php';
+require_once __DIR__ . '/../app/view/'.$pageToDisplay.'.tpl.php';
 require_once __DIR__ . '/../app/view/footer.tpl.php';
 ?>
