@@ -2,6 +2,8 @@
 
 class MainController
 {
+    
+
     public function home() {
         $this->show('index');
     }
