@@ -35,7 +35,7 @@ class Database
         return $pdoStatement;
     }
 
-    //TODO #1 a fix
+    //TODO #1 A verifier si pas autre methode pour la location srrver base uri mais fonctionne
     public function modificationDb(){
         if (!empty($_POST)){
             $namefirst = $_POST['firstname'];
@@ -50,8 +50,8 @@ class Database
     
         $sqlModif = "UPDATE livres SET auteurNom='$subname' , auteurPrenom='$namefirst' , Titre='$yourtitle' WHERE id='$yourid'";
     
-        $this->conn ->exec($sqlModif);
-        header('Location: index.php');
+        $this->db ->exec($sqlModif);
+        header('Location:'.$_SERVER["BASE_URI"]);
         }
     }
 }
