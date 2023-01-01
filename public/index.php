@@ -2,6 +2,8 @@
 
 require_once __DIR__ . '/../app/funcModif.php';
 require_once __DIR__ . '/../app/supprData.php';
+require_once __DIR__ . '/../app/model/Database.php';
+
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../app/controller/MainController.php';
 require_once __DIR__ . '/../app/controller/AjouterController.php';
@@ -18,14 +20,14 @@ $router = new AltoRouter();
 $router->setBasePath($_SERVER['BASE_URI']);
 
 // on map nos routes !
-$router->map('GET', '/', [
+$router->map('GET', '/',[
     'action' => 'home',
     'controller' => 'MainController'
 ]);
 
-$router->map('GET', '/ajouter', [
+$router->map('GET', '/ajouter',[
     'action' => 'ajouter',
-    'controller' => 'AjouterController'
+    'controller' => 'AjouterController',
 ]);
 
 // on "match" la requête actuelle avec nos routes enregistrées précédemment
@@ -46,6 +48,7 @@ if($match) {
     $controller = new $controllerToInstantiate();
     // on appelle notre méthode, et on lui envoie les paramètres d'URL
     $controller->$methodToCall($match['params']);
+
 } else {
     // 404, la route existe pas
     $controller = new ErrorController();
@@ -85,11 +88,7 @@ if(!empty($_GET['q'])){
     $sql.=" WHERE auteurNom LIKE '%$rech%' OR auteurPrenom LIKE '%$rech%' OR Titre LIKE '%$rech%'";
 }
 
-//instance de la classe Database, connexion maintenue avec le __construct
-$newConn = new Database();
 
-//stockage dans $listlivre les résultats obtenus avec showData ( affichage de données )
-// puis fetch all pour recup les resultats
-$listLivre = $newConn->showData()->fetchAll(PDO :: FETCH_ASSOC);
+
 
 ?>

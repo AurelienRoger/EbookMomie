@@ -20,7 +20,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($listLivre as $value): ?>
+                    <?php foreach ($viewData as $value): ?>
                   <tr>
                     <td><?= $value['auteurPrenom'] ?></td>
                     <td><?= $value['auteurNom'] ?></td>

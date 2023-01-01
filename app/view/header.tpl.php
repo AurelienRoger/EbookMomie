@@ -27,7 +27,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Acceuil</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Ajouter</a>
+                    <a class="nav-link" href="ajouter">Ajouter</a>
                   </li>
                 </ul>
               </div>
