@@ -63,6 +63,7 @@ if($match) {
 //var_dump($listLivre);
 
 
+//TODO #1 A fix le tri croissant 
 // Tri par ordre croissant soit du nom soit prenom soit titre
 if (!empty($_GET['order'])){
     if ($_GET['order'] == 'nom'){
