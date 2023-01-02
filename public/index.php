@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . '/../app/funcModif.php';
 require_once __DIR__ . '/../app/supprData.php';
-require_once __DIR__ . '/../app/model/Database.php';
+require_once __DIR__ . '/../app/model/Livres.php';
+require_once __DIR__ . '/../app/Utils/Database.php';
 
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../app/controller/MainController.php';
