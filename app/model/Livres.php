@@ -123,7 +123,8 @@ class Livres
     public function findAll(){
 
         $db = Database::getPDO();
-        $sql = 'SELECT * FROM livres';
+
+        $sql = 'SELECT * FROM livres ORDER BY auteurNom';
 
         $pdoStatement = $db->query($sql);
 

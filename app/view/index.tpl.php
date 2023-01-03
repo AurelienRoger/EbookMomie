@@ -12,10 +12,10 @@
             <table class="table" id="myTable">
                 <thead>
                   <tr>
-                    <th scope="col"><a href="index.php?order=prenom">Prenom</a></th>
-                    <th scope="col"><a href="index.php?order=nom">Nom</a></th>
-                    <th scope="col"><a href="index.php?order=titre">Titre</a></th>
-                    <th scope="col"><a href="index.php?order=dateAchat">Date d'achat</a></th>
+                    <th scope="col"><a href="#">Prenom</a></th>
+                    <th scope="col"><a href="#">Nom</a></th>
+                    <th scope="col"><a href="#">Titre</a></th>
+                    <th scope="col"><a href="#">Date d'achat</a></th>
                     <th scope="col">Mod / Suppr</th>
                   </tr>
                 </thead>
