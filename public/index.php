@@ -23,12 +23,12 @@ $router->setBasePath($_SERVER['BASE_URI']);
 $router->map('GET', '/',[
     'action' => 'home',
     'controller' => 'MainController'
-]);
+], 'home');
 
 $router->map('GET', '/ajouter',[
     'action' => 'ajouter',
     'controller' => 'AjouterController',
-]);
+],'ajouter');
 
 // on "match" la requête actuelle avec nos routes enregistrées précédemment
 $match = $router->match();
