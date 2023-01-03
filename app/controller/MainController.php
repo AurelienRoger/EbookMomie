@@ -13,6 +13,10 @@ class MainController
 
     }
 
+    public function modifDb(){
+        
+    }
+
     public function show($viewName, $viewData = [])
     {
 

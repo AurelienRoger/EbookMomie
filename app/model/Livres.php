@@ -131,4 +131,9 @@ class Livres
         return $results;
 
     }
+
+    public function modifDb(){
+        $db = Database::getPDO();
+        $sql = 
+    }
 }
