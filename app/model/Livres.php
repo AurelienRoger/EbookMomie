@@ -2,6 +2,7 @@
 
 class Livres
 {
+
     private $id;
     private $auteurNom;
     private $auteurPrenom;
@@ -133,7 +134,25 @@ class Livres
     }
 
     public function modifDb(){
+        global $router;
+        
         $db = Database::getPDO();
-        $sql = 
+
+
+        if (!empty($_POST)){
+            $namefirst = $_POST['firstname'];
+            $subname = $_POST['lastname'];
+            $yourtitle = $_POST['title'];
+            $yourid = $_POST['idlivre'];
+    
+            $namefirst = str_replace("'", "\'", $namefirst);
+            $subname = str_replace("'", "\'", $subname);
+            $yourtitle = str_replace("'", "\'", $yourtitle);
+
+            $sql = "UPDATE livres SET auteurNom='$subname' , auteurPrenom='$namefirst' , Titre='$yourtitle' WHERE id='$yourid'";
+            $pdoStatement = $db->query($sql);
+        }
+
+        header('Location:'. $router->generate('home'));
     }
 }

@@ -14,7 +14,8 @@ class MainController
     }
 
     public function modifDb(){
-        
+        $newModif = new Livres();
+        $newModif->modifDb();
     }
 
     public function show($viewName, $viewData = [])

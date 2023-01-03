@@ -33,7 +33,7 @@ $router->map('GET', '/ajouter',[
 $router->map('GET|POST', '/modifDb',[
     'action' => 'modifDb',
     'controller' => 'MainController',
-]);
+],'modification');
 
 // on "match" la requête actuelle avec nos routes enregistrées précédemment
 $match = $router->match();

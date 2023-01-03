@@ -48,7 +48,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        <form action="funcModif.php" method="POST">
+                        <form action="<?= $router->generate('modification') ?>" method="POST">
                         <div class="input-group input-group-sm mb-3">
                           <span class="input-group-text" id="inputGroup-sizing-sm">Prenom Auteur</span>
                           <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="<?=$value->getAuteurPrenom()?>" name="firstname">
