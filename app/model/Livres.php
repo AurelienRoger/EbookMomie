@@ -150,9 +150,20 @@ class Livres
             $yourtitle = str_replace("'", "\'", $yourtitle);
 
             $sql = "UPDATE livres SET auteurNom='$subname' , auteurPrenom='$namefirst' , Titre='$yourtitle' WHERE id='$yourid'";
-            $pdoStatement = $db->query($sql);
+            $db->query($sql);
         }
 
+        header('Location:'. $router->generate('home'));
+    }
+
+    public function supprDb(){
+        global $router;
+
+        $db = Database::getPDO();
+        $yourid = $_POST['idlivre'];
+        $sql = "DELETE FROM livres WHERE id='$yourid'";
+
+        $db ->exec($sql);
         header('Location:'. $router->generate('home'));
     }
 }

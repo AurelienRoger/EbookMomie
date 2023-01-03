@@ -18,6 +18,11 @@ class MainController
         $newModif->modifDb();
     }
 
+    public function supprDb(){
+        $newSuppr = new Livres();
+        $newSuppr->supprDb();
+    }
+
     public function show($viewName, $viewData = [])
     {
 

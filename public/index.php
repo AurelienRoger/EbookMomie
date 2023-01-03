@@ -1,6 +1,5 @@
 <?php
 
-require_once __DIR__ . '/../app/supprData.php';
 require_once __DIR__ . '/../app/model/Livres.php';
 require_once __DIR__ . '/../app/Utils/Database.php';
 
@@ -34,6 +33,11 @@ $router->map('GET|POST', '/modifDb',[
     'action' => 'modifDb',
     'controller' => 'MainController',
 ],'modification');
+
+$router->map('GET|POST', '/supprDb',[
+    'action' => 'supprDb',
+    'controller' => 'MainController',
+],'suppression');
 
 // on "match" la requête actuelle avec nos routes enregistrées précédemment
 $match = $router->match();
@@ -82,11 +86,6 @@ if (!empty($_GET['order'])){
     }
 };
 
-//Suppression de livre
-
-if (!empty($_GET['delete_id'])){
-    supprData();
-};
 
 //Recherche dans la table
 if(!empty($_GET['q'])){
