@@ -1,5 +1,7 @@
 <?php
 
+namespace EbookMomie\controller;
+
 class ErrorController extends CoreController
 {
     // gestion des erreurs 404

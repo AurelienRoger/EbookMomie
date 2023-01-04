@@ -1,6 +1,8 @@
-
-
 <?php
+
+namespace EbookMomie\utils;
+
+use PDO;
 
 // Retenir son utilisation  => Database::getPDO()
 // Design Pattern : Singleton
