@@ -1,6 +1,6 @@
 <?php
 
-class ErrorController
+class ErrorController extends CoreController
 {
     // gestion des erreurs 404
     public function error404() {
@@ -12,10 +12,5 @@ class ErrorController
         $this->show('401');
     }
 
-    public function show($viewName, $viewData = [])
-    {
-        require_once __DIR__ . '/../view/header.tpl.php';
-        require_once __DIR__ . '/../view/' . $viewName . '.tpl.php';
-        require_once __DIR__ . '/../view/footer.tpl.php';
-    }
+
 }
