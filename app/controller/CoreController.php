@@ -1,5 +1,7 @@
 <?php
 
+namespace EbookMomie\controller;
+
 class CoreController
 {
     public function show($viewName, $viewData = [])

@@ -1,14 +1,6 @@
 <?php
 
-
-require_once __DIR__ . '/../app/model/Livres.php';
-require_once __DIR__ . '/../app/Utils/Database.php';
-
 require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../app/controller/CoreController.php';
-require_once __DIR__ . '/../app/controller/MainController.php';
-require_once __DIR__ . '/../app/controller/AjouterController.php';
-require_once __DIR__ . '/../app/controller/ErrorController.php';
 
 
 //Altorouteur
@@ -23,22 +15,22 @@ $router->setBasePath($_SERVER['BASE_URI']);
 // on map nos routes !
 $router->map('GET', '/',[
     'action' => 'home',
-    'controller' => 'MainController'
+    'controller' => 'EbookMomie\controller\MainController'
 ], 'home');
 
 $router->map('GET', '/ajouter',[
     'action' => 'ajouter',
-    'controller' => 'AjouterController',
+    'controller' => 'EbookMomie\controller\AjouterController',
 ],'ajouter');
 
 $router->map('GET|POST', '/modifDb',[
     'action' => 'modifDb',
-    'controller' => 'MainController',
+    'controller' => 'EbookMomie\controller\MainController',
 ],'modification');
 
 $router->map('GET|POST', '/supprDb',[
     'action' => 'supprDb',
-    'controller' => 'MainController',
+    'controller' => 'EbookMomie\controller\MainController',
 ],'suppression');
 
 // on "match" la requête actuelle avec nos routes enregistrées précédemment
@@ -62,7 +54,7 @@ if($match) {
 
 } else {
     // 404, la route existe pas
-    $controller = new ErrorController();
+    $controller = new EbookMomie\controller\ErrorController();
     $controller->error404();
 }
 

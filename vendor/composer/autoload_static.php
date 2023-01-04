@@ -17,6 +17,10 @@ class ComposerStaticInitaacc214f1b031b374c710a1bebf212fb
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
         ),
+        'E' => 
+        array (
+            'EbookMomie\\' => 11,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -27,6 +31,10 @@ class ComposerStaticInitaacc214f1b031b374c710a1bebf212fb
         'Symfony\\Component\\VarDumper\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
+        ),
+        'EbookMomie\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 

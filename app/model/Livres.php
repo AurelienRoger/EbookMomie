@@ -1,5 +1,10 @@
 <?php
 
+namespace EbookMomie\model;
+
+use EbookMomie\utils\Database;
+use PDO;
+
 class Livres
 {
 
@@ -128,7 +133,7 @@ class Livres
 
         $pdoStatement = $db->query($sql);
 
-        $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'Livres');
+        $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'EbookMomie\model\Livres');
 
         return $results;
 

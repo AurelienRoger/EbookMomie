@@ -1,5 +1,9 @@
 <?php
 
+namespace EbookMomie\controller;
+
+use EbookMomie\model\Livres;
+
 class MainController extends CoreController
 {
     
