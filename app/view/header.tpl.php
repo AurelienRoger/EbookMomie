@@ -26,7 +26,7 @@
                     <a class="nav-link active" aria-current="page" href="<?= $router->generate('home') ?>">Acceuil</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="<?= $router->generate('ajouter') ?>">Ajouter</a>
+                    <a class="nav-link" href="<?= $router->generate("ajouter") ?>" data-bs-target="#ModalAjout">Ajouter</a>
                   </li>
                 </ul>
               </div>

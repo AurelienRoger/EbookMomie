@@ -23,8 +23,8 @@ $router->map('GET', '/ajouter',[
     'controller' => 'EbookMomie\controller\AjouterController',
 ],'ajouter');
 
-$router->map('GET|POST', '/modifDb',[
-    'action' => 'modifDb',
+$router->map('POST', '/',[
+    'action' => 'update',
     'controller' => 'EbookMomie\controller\MainController',
 ],'modification');
 
