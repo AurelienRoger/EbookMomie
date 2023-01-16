@@ -3,6 +3,7 @@
 namespace EbookMomie\model;
 
 use EbookMomie\utils\Database;
+use EbookMomie\controller\CoreController;
 use PDO;
 
 class Livres
@@ -125,7 +126,22 @@ class Livres
         return $this;
     }
 
-    public function findAll(){
+    public static function find($id)
+    {
+        $db = Database::getPDO();
+        $sql = "SELECT * FROM livres WHERE id = :id";
+
+        $pdoStatement = $db->prepare($sql);
+        $pdoStatement -> bindParam('id' , $id);
+        $pdoStatement -> execute();
+
+        $result = $pdoStatement->fetchObject('EbookMomie\model\Livres');
+
+        return $result;
+
+    }
+
+    public static function findAll(){
 
         $db = Database::getPDO();
 
@@ -139,27 +155,44 @@ class Livres
 
     }
 
-    public function modifDb(){
-        global $router;
-        
+    public function update()
+    {
         $db = Database::getPDO();
+        $sql = "UPDATE livres SET auteurNom = :auteurNom, auteurPrenom = :auteurPrenom, Titre = :Titre WHERE id = :id";
+        $pdoStatement = $db->prepare($sql);
+
+        $pdoStatement->bindParam('auteurNom' , $this->auteurNom);
+        $pdoStatement->bindParam('auteurPrenom' , $this->auteurPrenom);
+        $pdoStatement->bindParam('Titre' , $this->Titre);
+        $pdoStatement->bindParam('id' , $this->id);
+
+        $pdoStatement->execute();
+    }
+
+    public function add()
+    {
+        $db = Database::getPDO();
+        $sql = "INSERT INTO livres (auteurNom , auteurPrenom , Titre) VALUES (:auteurNom, :auteurPrenom, :Titre)";
+        $pdoStatement = $db->prepare($sql);
+
+        $pdoStatement->bindParam('auteurNom' , $this->auteurNom);
+        $pdoStatement->bindParam('auteurPrenom' , $this->auteurPrenom);
+        $pdoStatement->bindParam('Titre' , $this->Titre);
+
+        $success = $pdoStatement->execute();
+    }
+
+    public function delete()
+    {
+        $db = Database::getPDO();
+        $sql = "DELETE FROM livres WHERE id=:id";
+        $pdoStatement = $db->prepare($sql);
+
+        $pdoStatement->bindParam('id' , $this->id);
+
+        $success = $pdoStatement->execute();
 
 
-        if (!empty($_POST)){
-            $namefirst = $_POST['firstname'];
-            $subname = $_POST['lastname'];
-            $yourtitle = $_POST['title'];
-            $yourid = $_POST['idlivre'];
-    
-            $namefirst = str_replace("'", "\'", $namefirst);
-            $subname = str_replace("'", "\'", $subname);
-            $yourtitle = str_replace("'", "\'", $yourtitle);
-
-            $sql = "UPDATE livres SET auteurNom='$subname' , auteurPrenom='$namefirst' , Titre='$yourtitle' WHERE id='$yourid'";
-            $db->query($sql);
-        }
-
-        header('Location:'. $router->generate('home'));
     }
 
     public function supprDb(){
