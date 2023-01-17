@@ -2,6 +2,8 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
+session_start();
+
 
 //Altorouteur
 
@@ -25,12 +27,12 @@ $router->map('GET', '/ajouter',[
 
 $router->map('POST', '/',[
     'action' => 'update',
-    'controller' => 'EbookMomie\controller\MainController',
+    'controller' => 'EbookMomie\controller\LivreController',
 ],'modification');
 
-$router->map('GET|POST', '/supprDb',[
-    'action' => 'supprDb',
-    'controller' => 'EbookMomie\controller\MainController',
+$router->map('POST', '/supprDb',[
+    'action' => 'delete',
+    'controller' => 'EbookMomie\controller\LivreController',
 ],'suppression');
 
 // on "match" la requête actuelle avec nos routes enregistrées précédemment
