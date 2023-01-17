@@ -195,14 +195,4 @@ class Livres
 
     }
 
-    public function supprDb(){
-        global $router;
-
-        $db = Database::getPDO();
-        $yourid = $_POST['idlivre'];
-        $sql = "DELETE FROM livres WHERE id='$yourid'";
-
-        $db ->exec($sql);
-        header('Location:'. $router->generate('home'));
-    }
 }

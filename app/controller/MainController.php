@@ -17,34 +17,7 @@ class MainController extends CoreController
 
     }
 
-    public function update()
-    {
-        $id = $_POST['id'];
-        $auteurNom = $_POST['auteurNom'];
-        $auteurPrenom = $_POST['auteurPrenom'];
-        $titre = $_POST['Titre'];
 
-        $updateBook = Livres::find($id);
-
-        $updateBook->setAuteurNom($auteurNom);
-        $updateBook->setAuteurPrenom($auteurPrenom);
-        $updateBook->setTitre($titre);
-        
-        $succes = $updateBook->update();
-
-        $viewData['listLivre'] = Livres::findAll();
-
-        $this->show('index', $viewData);
-        //header('Location: index');
-
-
-
-    }
-
-    public function supprDb(){
-        $newSuppr = new Livres();
-        $newSuppr->supprDb();
-    }
 
 
 
