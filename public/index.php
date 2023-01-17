@@ -35,6 +35,16 @@ $router->map('POST', '/supprDb',[
     'controller' => 'EbookMomie\controller\LivreController',
 ],'suppression');
 
+$router->map('GET', '/connection',[
+    'action' => 'connection',
+    'controller' => 'EbookMomie\controller\UserController',
+],'connection');
+
+$router->map('POST', '/connection',[
+    'action' => 'connectionPost',
+    'controller' => 'EbookMomie\controller\UserController',
+],'connectionPost');
+
 // on "match" la requête actuelle avec nos routes enregistrées précédemment
 $match = $router->match();
 

@@ -28,6 +28,9 @@
                   <li class="nav-item">
                     <a class="nav-link" href="<?= $router->generate("ajouter") ?>" data-bs-target="#ModalAjout">Ajouter</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="<?= $router->generate("connection") ?>" data-bs-target="#ModalAjout">Connexion</a>
+                  </li>
                 </ul>
               </div>
             </div>
