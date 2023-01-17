@@ -1,4 +1,4 @@
-
+<?php dump($_SESSION); ?>
     <main class="">
 
 
@@ -20,7 +20,10 @@
                   </tr>
                 </thead>
                 <tbody>
+
                     <?php foreach ($viewData['listLivre'] as $value): ?>
+                      <?php if (isset($_SESSION['id'])): ?>
+                      <?php if ($_SESSION['id'] == $value->getId_user()): ?>
                   <tr>
                     <td><?= $value->getAuteurPrenom() ?></td>
                     <td><?= $value->getAuteurNom() ?></td>
@@ -110,6 +113,8 @@
                   <!-- FIN MODAL --> 
                     </td>
                   </tr>
+                  <?php endif; ?>
+                  <?php endif; ?>
                   <?php endforeach; ?>
                 </tbody>
               </table>

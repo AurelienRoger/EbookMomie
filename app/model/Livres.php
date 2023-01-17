@@ -3,6 +3,8 @@
 namespace EbookMomie\model;
 
 use EbookMomie\utils\Database;
+use EbookMomie\model\User;
+use EbookMomie\controller\UserController;
 use EbookMomie\controller\CoreController;
 use PDO;
 
@@ -143,9 +145,13 @@ class Livres
 
     public static function findAll(){
 
+
         $db = Database::getPDO();
 
         $sql = 'SELECT * FROM livres ORDER BY auteurNom';
+       // $sql = 'SELECT user.id FROM user INNER JOIN livres WHERE livres.id_user = 1';
+       //$sql = 'SELECT * FROM livres INNER JOIN user WHERE user.id = livres.id_user';
+        //$sql = 'SELECT * FROM livres INNER JOIN user WHERE livres.id_user = user.id';
 
         $pdoStatement = $db->query($sql);
 
@@ -192,6 +198,20 @@ class Livres
 
         $success = $pdoStatement->execute();
 
+
+    }
+
+    public function showById(){
+
+        $db = Database::getPDO();
+
+        $sql = 'SELECT * FROM livres INNER JOIN user WHERE user.id = livres.id_user';
+
+        $pdoStatement = $db->query($sql);
+
+        $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'EbookMomie\model\Livres');
+
+        return $results;
 
     }
 
